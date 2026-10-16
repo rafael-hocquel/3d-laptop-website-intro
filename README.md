@@ -5,6 +5,11 @@ hébergée localement, la palette de couleurs et les métadonnées.
 **La scène 3D n'est pas encore intégrée** : la page affiche pour l'instant un
 simple texte de vérification de la police.
 
+> [!NOTE]
+> Le code de la scène 3D (modèle de l'ordinateur, ouverture du capot, mouvement de
+> caméra) se trouve sur la branche `landing-page-header`, qui est la branche
+> affichée par défaut du dépôt. Cette branche `main` ne sert que de socle propre.
+
 **Auteur :** Rafaël HOCQUEL
 **Version :** 0.2 - socle
 
