@@ -21,7 +21,7 @@ const sourceSerif4Variable = localFont({
 export const metadata: Metadata = {
   title: "Rafaël HOCQUEL - Portfolio",
   description:
-    "Porfolio professionnel & personnel de Rafaël HOCQUEL - Présentation & Contat, Projets universitaires & personnels, Expériences, Compétences et bien plus...",
+    "Portfolio professionnel & personnel de Rafaël HOCQUEL - Présentation & Contact, Projets universitaires & personnels, Expériences, Compétences et bien plus...",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
