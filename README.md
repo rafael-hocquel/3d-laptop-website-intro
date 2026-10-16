@@ -45,7 +45,7 @@ les moteurs de recherche.
 | Police Source Serif 4 hébergée localement | Fait |
 | Palette de couleurs en variables | Fait |
 | Titre et description du site | Fait |
-| Modèle 3D de l'ordinateur et ouverture du capot | À faire |
+| Modèle 3D de l'ordinateur et ouverture du capot | Fait |
 | Mouvement de caméra et transition vers le site déposé | À faire |
 | Version allégée pour les téléphones | À faire |
 
