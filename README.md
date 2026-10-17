@@ -1,69 +1,43 @@
-# Socle d'une introduction 3D pour un site - Ouverture d'un ordinateur portable
+# Intro Web 3D — Ouverture d'un ordinateur portable
 
-Ce dépôt est le **socle** d'une introduction 3D : la structure Next.js, la police
-hébergée localement, la palette de couleurs et les métadonnées.
-**La scène 3D n'est pas encore intégrée** : la page affiche pour l'instant un
-simple texte de vérification de la police.
+Une animation d'introduction en 3D pour un site web : la scène démarre sur un ordinateur portable fermé, l'écran s'ouvre et s'allume, puis la caméra plonge dedans pour laisser place au vrai site en plein écran.
+
+L'idée est de garder l'animation légère et non bloquante : elle ne se joue qu'une seule fois, et on peut toujours la passer ou accéder au site par un lien direct (pratique pour les utilisateurs pressés comme pour le SEO).
 
 > [!NOTE]
-> Le code de la scène 3D (modèle de l'ordinateur, ouverture du capot, mouvement de
-> caméra) se trouve sur la branche `landing-page-header`, qui est la branche
-> affichée par défaut du dépôt. Cette branche `main` ne sert que de socle propre.
+> Vous êtes sur la branche `landing-page-header` (branche par défaut), suite au changement d'objectif de ce projet, le code lié à l'animation se trouve sur cette branche, en attendant une migration
 
-**Auteur :** Rafaël HOCQUEL
-**Version :** 0.2 - socle
+## Déroulement de la séquence
 
-## Ce que fera l'introduction (une fois la scène intégrée)
+1. Apparition de l'ordinateur portable fermé.
+2. Ouverture du capot et allumage de l'écran.
+3. Travelling de la caméra vers l'écran.
+4. Transition plein écran vers le site final, qui prend le relais avec sa navigation classique.
 
-| Étape | Ce qui se passera |
-|-------|-------------------|
-| 1 | La scène s'ouvre sur un ordinateur portable |
-| 2 | Son capot se lève, l'écran s'allume |
-| 3 | La caméra avance vers l'écran |
-| 4 | L'écran passe au premier plan et le site apparaît, à sa taille normale |
-| 5 | Le visiteur se retrouve simplement sur le site, avec sa navigation habituelle |
+## Personnalisation
 
-L'introduction ne se jouera qu'une fois, et restera facultative : un lien direct
-vers le site doit toujours être possible, pour les visiteurs pressés comme pour
-les moteurs de recherche.
+Le projet est pensé comme une brique réutilisable. Voici où modifier les éléments principaux :
 
-## Comment l'utiliser
+| Élément | Emplacement | Détails |
+| :--- | :--- | :--- |
+| **Métadonnées** | `app/layout.tsx` | Titre de la page et description SEO |
+| **Couleurs** | `app/globals.css` | Palette définie via des variables CSS |
+| **Typographie** | `app/fonts/` | Police hébergée en local (*Source Serif 4* par défaut, sans appel externe) |
+| **Assets** | `public/logos/`, `public/signatures/` | Fichiers d'exemple à remplacer par les vôtres |
+| **Site cible** | *À venir* | Le dossier dédié au site final sera branché une fois la transition caméra terminée |
 
-| Ce que vous voulez changer | Où |
-|---------------------------|-----|
-| **Votre site** | Pas encore de dossier dédié : ses fichiers seront servis tels quels une fois la scène intégrée |
-| Le titre et la description | `app/layout.tsx` |
-| Les couleurs | `app/globals.css`, où la palette est définie en variables |
-| La police | `app/fonts`, en la déposant dans le dépôt plutôt qu'en la demandant à un service externe |
-| Le logo et la signature | `public/logos` et `public/signatures`, qui contiennent ici des exemples à remplacer |
+## Avancement
 
-## Où en est le projet
+- [x] Socle technique (Next.js 16, React 19, TypeScript, Tailwind CSS 4)
+- [x] Configuration des variables CSS et hébergement local de la police
+- [x] Intégration du modèle 3D et animation d'ouverture du capot
+- [ ] Travelling caméra et transition fluide vers le DOM du site
+- [ ] Fallback / version allégée pour mobile
 
-| Étape | État |
-|-------|------|
-| Socle Next.js, TypeScript et Tailwind | Fait |
-| Police Source Serif 4 hébergée localement | Fait |
-| Palette de couleurs en variables | Fait |
-| Titre et description du site | Fait |
-| Modèle 3D de l'ordinateur et ouverture du capot | Fait |
-| Mouvement de caméra et transition vers le site déposé | À faire |
-| Version allégée pour les téléphones | À faire |
-
-## Technos
-
-| Outil | Rôle |
-|-------|------|
-| **Next.js 16** | Structure du projet et service des fichiers |
-| **React 19** | Composants |
-| **TypeScript** | Typage |
-| **Tailwind CSS 4** | Styles, avec la palette en variables |
-| **ESLint** | Vérification du code |
-
-## Lancer le projet
+## Lancer le projet en local
 
 ```bash
 git clone https://github.com/rafael-hocquel/3d-laptop-website-intro.git
 cd 3d-laptop-website-intro
 npm install
 npm run dev
-```
